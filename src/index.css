@@ -2,14 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Technical Services Design System - Professional & Modern */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 28% 17%;
+    
+    /* Tech Brand Palette */
+    --tech-primary: 220 90% 56%;
+    --tech-primary-light: 220 85% 65%;
+    --tech-secondary: 260 84% 57%;
+    --tech-accent: 195 100% 50%;
+    
+    /* Surface Colors */
+    --surface: 210 20% 98%;
+    --surface-dark: 215 16% 92%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -17,17 +26,29 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: var(--tech-primary);
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--surface);
+    --secondary-foreground: var(--foreground);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: var(--surface-dark);
+    --muted-foreground: 215 16% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--tech-accent);
+    --accent-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--tech-primary)), hsl(var(--tech-secondary)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--tech-primary)), hsl(var(--tech-primary-light)));
+    --gradient-accent: linear-gradient(45deg, hsl(var(--tech-accent)), hsl(var(--tech-primary-light)));
+    
+    /* Shadows & Effects */
+    --shadow-tech: 0 10px 30px -10px hsl(var(--tech-primary) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--tech-accent) / 0.2);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
