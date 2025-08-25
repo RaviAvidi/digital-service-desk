@@ -1,24 +1,39 @@
 import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
-  // Replace with your actual WhatsApp community invite link
-  const whatsappCommunityLink = "https://chat.whatsapp.com/EbIMFWBiCMg7MqZDgcQtaW?mode=ems_wa_c ";
+  // Get stored member phone numbers from localStorage
+  const getStoredMembers = () => {
+    const stored = localStorage.getItem('whatsapp-members');
+    return stored ? JSON.parse(stored) : ['', '', ''];
+  };
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
   
   const handleWhatsAppClick = () => {
-    // Open WhatsApp community with pre-filled message
+    const members = getStoredMembers();
     const encodedMessage = encodeURIComponent(message);
-    const communityUrl = `${whatsappCommunityLink}?text=${encodedMessage}`;
-    window.open(communityUrl, '_blank');
+    
+    // Open WhatsApp chat for each member who has a phone number
+    members.forEach((phoneNumber: string, index: number) => {
+      if (phoneNumber.trim()) {
+        // Remove any non-numeric characters except +
+        const cleanPhone = phoneNumber.replace(/[^\d+]/g, '');
+        const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+        
+        // Add slight delay between opening multiple tabs
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank');
+        }, index * 200);
+      }
+    });
   };
 
   return (
     <button
       onClick={handleWhatsAppClick}
       className="fixed bottom-6 right-6 z-50 bg-gradient-to-br from-whatsapp to-whatsapp-dark hover:from-whatsapp-dark hover:to-whatsapp hover:scale-110 shadow-lg hover:shadow-xl transition-all duration-300 animate-bounce rounded-full p-3 border-2 border-white/20"
-      aria-label="Join our WhatsApp Community"
-      title="Join our technical services community"
+      aria-label="Contact WhatsApp Team"
+      title="Send message to our team members"
     >
       <MessageCircle 
         className="w-8 h-8 text-white"
