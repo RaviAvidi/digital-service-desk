@@ -1,8 +1,8 @@
 const WhatsAppButton = () => {
   const whatsappNumbers = [
     "917075699278", // Sales Team
-    "917075699279", // Technical Support  
-    "917075699280", // Customer Service
+    "919059084900", // Technical Support  
+    "916303076819", // Customer Service
   ];
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
