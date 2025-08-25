@@ -1,14 +1,32 @@
 const WhatsAppButton = () => {
-  // Replace with your actual WhatsApp group invite link
-  const whatsappGroupLink = "https://chat.whatsapp.com/K5iDGO6LDRS943B2r3wv97?mode=ems_share_c ";
+  // WhatsApp group chat ID (extract from your group invite link)
+  const groupChatId = "K5iDGO6LDRS943B2r3wv97";
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
   
   const handleWhatsAppClick = () => {
-    // Open WhatsApp group with pre-filled message
+    // Open WhatsApp group chat with pre-filled message
     const encodedMessage = encodeURIComponent(message);
-    const groupUrl = `${whatsappGroupLink}?text=${encodedMessage}`;
-    window.open(groupUrl, '_blank');
+    const groupChatUrl = `https://wa.me/?text=${encodedMessage}`;
+    
+    // First open WhatsApp with the message, then provide group link as fallback
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      // On mobile, try to open WhatsApp app directly with group
+      window.open(`whatsapp://send?text=${encodedMessage}`, '_blank');
+      // Fallback: open group invite link after a short delay
+      setTimeout(() => {
+        window.open(`https://chat.whatsapp.com/${groupChatId}`, '_blank');
+      }, 1000);
+    } else {
+      // On desktop, open WhatsApp Web with group
+      window.open(`https://web.whatsapp.com/send?text=${encodedMessage}`, '_blank');
+      // Also provide group link
+      setTimeout(() => {
+        window.open(`https://chat.whatsapp.com/${groupChatId}`, '_blank');
+      }, 1000);
+    }
   };
 
   return (
