@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton = () => {
   // Replace with your actual WhatsApp community invite link
-  const whatsappCommunityLink = "https://chat.whatsapp.com/invite/GZL4EAFv58LEzHHphKtNxA";
+  const whatsappCommunityLink = "https://chat.whatsapp.com/EbIMFWBiCMg7MqZDgcQtaW?mode=ems_wa_c ";
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
   
