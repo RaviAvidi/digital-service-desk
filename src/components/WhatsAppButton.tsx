@@ -1,6 +1,6 @@
 const WhatsAppButton = () => {
   // Replace with your actual WhatsApp group invite link
-  const whatsappGroupLink = "https://chat.whatsapp.com/YOUR_GROUP_INVITE_CODE";
+  const whatsappGroupLink = "https://chat.whatsapp.com/K5iDGO6LDRS943B2r3wv97?mode=ems_share_c ";
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
   
