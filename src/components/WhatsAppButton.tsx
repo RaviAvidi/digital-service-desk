@@ -4,7 +4,7 @@ const WhatsAppButton = () => {
   // Get stored member phone numbers from localStorage
   const getStoredMembers = () => {
     const stored = localStorage.getItem('whatsapp-members');
-    return stored ? JSON.parse(stored) : ['', '', ''];
+    return stored ? JSON.parse(stored) : ['917075699278', '919059084900', '919948238375'];
   };
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
