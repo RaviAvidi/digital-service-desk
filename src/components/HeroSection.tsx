@@ -12,7 +12,7 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-6 text-center text-white relative z-10">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          Professional
+          FRDS TECH
           <span className="block bg-gradient-to-r from-white to-tech-accent bg-clip-text text-transparent">
             Technical Services
           </span>
