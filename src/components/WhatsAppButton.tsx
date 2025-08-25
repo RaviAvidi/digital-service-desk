@@ -1,23 +1,14 @@
 const WhatsAppButton = () => {
-  const whatsappNumbers = [
-    "917075699278", // Sales Team
-    "919059084900", // Technical Support  
-    "916303076819", // Customer Service
-  ];
+  // Replace with your actual WhatsApp group invite link
+  const whatsappGroupLink = "https://chat.whatsapp.com/YOUR_GROUP_INVITE_CODE";
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
   
   const handleWhatsAppClick = () => {
+    // Open WhatsApp group with pre-filled message
     const encodedMessage = encodeURIComponent(message);
-    
-    // Open WhatsApp chat for all numbers
-    whatsappNumbers.forEach((phoneNumber, index) => {
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-      // Add small delay between opens to prevent browser blocking
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, index * 500);
-    });
+    const groupUrl = `${whatsappGroupLink}?text=${encodedMessage}`;
+    window.open(groupUrl, '_blank');
   };
 
   return (
