@@ -1,13 +1,13 @@
 const WhatsAppButton = () => {
   // WhatsApp group chat ID (extract from your group invite link)
-  const groupChatId = "K5iDGO6LDRS943B2r3wv97";
+  const groupChatId = "https://chat.whatsapp.com/GZL4EAFv58LEzHHphKtNxA";
   
   const message = "Hi! I'm interested in your technical services. Could you please provide more information?";
   
   const handleWhatsAppClick = () => {
     // Open WhatsApp group chat with pre-filled message
     const encodedMessage = encodeURIComponent(message);
-    const groupChatUrl = `https://wa.me/?text=${encodedMessage}`;
+    const groupChatUrl = `https://chat.whatsapp.com/GZL4EAFv58LEzHHphKtNxA`;
     
     // First open WhatsApp with the message, then provide group link as fallback
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
